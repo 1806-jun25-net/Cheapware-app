@@ -15,6 +15,7 @@ export class AppComponent {
   ngOnIt(): void {
     this.http.get('https://localhost:44306/api/').subscribe(data => {
       console.log(data);
+
     })
   }
 }
