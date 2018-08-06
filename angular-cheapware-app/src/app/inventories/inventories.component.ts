@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Inventorys} from '../Inventorys';
 import {AppService} from '../app.service';
 import { Observable, of } from 'rxjs';
@@ -14,7 +14,6 @@ const httpOptions = {
   styleUrls: ['./inventories.component.css']
 })
 export class InventoriesComponent implements OnInit {
-
   inventories : Inventorys[];
   ufo
 
@@ -30,8 +29,9 @@ export class InventoriesComponent implements OnInit {
     this.selecteditem = item;
   }
 
-  updateStock(item: Inventorys): Observable<any> {
-    return this.http.put('http://cheapwareapi.azurewebsites.net/api/inventorys', item, httpOptions);
+
+  updateStock(inventories: Inventorys[]): Observable<any> {
+    return this.http.put('http://cheapwareapi.azurewebsites.net/api/inventorys', this.inventories, httpOptions);
   }
 
   getInventories(): void {
