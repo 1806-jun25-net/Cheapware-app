@@ -1,6 +1,7 @@
 export class Inventorys {
-    Name : string;
-    Quantity : number;
-    Category : string;
-    Price : number;
+    constructor(
+        public Name: string,
+        public Quantity : number,
+        public Category : string,
+        public Price : number) {}
 }

@@ -1,41 +1,42 @@
+<h2>The Inventory</h2>
 
 
-<table class="table">
-  <thead>
-      <tr>
-          <th>
-              Name
-          </th>
-          <th>
-              Quantity
-          </th>
-          <th>
-              Category
-          </th>
-          <th>
-              Price
-          </th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-
-          <tr>
-              <td>
-                  {{Name}}
-              </td>
-              <td>
-                  {{Quantity}}
-              </td>
-              <td>
-                  {{Category}}
-              </td>
-              <td>
-                  {{Price}}
-              </td>
-              <td>
-                  update
-              </td>
-          </tr>
-  </tbody>
-</table>
+<table class="inventories">
+    <thead>
+        <tr >
+            <th>
+                Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+  
+            <tr *ngFor="let item of ufo" (click)="onSelect(item)">
+                <td >
+                    {{item.name}}
+                </td>
+                <td>
+                    <input [(ngModel)]="item.quantity">
+                </td>
+                <td>
+                    {{item.category}}
+                </td>
+                <td>
+                    {{item.price}}
+                </td>
+                <td>
+                    <button (click)="updateStock(item)">update</button>
+                </td>
+            </tr>
+    </tbody>
+  </table>
