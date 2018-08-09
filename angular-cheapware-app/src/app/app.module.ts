@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { InventoriesComponent } from './inventories/inventories.component';
+import { InventoryDetailComponent } from './inventory-detail/inventory-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InventoriesComponent
+    InventoriesComponent,
+    InventoryDetailComponent
   ],
   imports: [
     BrowserModule,
